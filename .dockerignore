@@ -1,0 +1,12 @@
+.git
+.venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+notebooks/
+reports/figures/
+data/interim/
+data/processed/
+*.ipynb_checkpoints
+.DS_Store

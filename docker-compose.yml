@@ -1,0 +1,39 @@
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount data and models so training results persist between runs
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./reports:/app/reports
+    environment:
+      - PYTHONPATH=/app/src
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - PYTHONPATH=/app/src
+      - API_URL=http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy

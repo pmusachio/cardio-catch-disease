@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "trained_at": "2026-06-14T14:24:11+00:00",
+  "dataset": "sulianova/cardiovascular-disease-dataset",
+  "data_sha256": "21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c",
+  "target": "cardio",
+  "problem": "cardiovascular disease screening (balanced binary classification)",
+  "best_model": "hist_gb",
+  "best_params": {
+    "clf__max_leaf_nodes": 63,
+    "clf__max_iter": 400,
+    "clf__max_depth": 3,
+    "clf__learning_rate": 0.0608997324441945,
+    "clf__l2_regularization": 1.0
+  },
+  "cv_selection": [
+    {
+      "model": "hist_gb",
+      "roc_auc_mean": 0.8029232773133135,
+      "roc_auc_std": 0.0024894615258046994
+    },
+    {
+      "model": "logreg",
+      "roc_auc_mean": 0.7939424097421266,
+      "roc_auc_std": 0.001372607741189573
+    },
+    {
+      "model": "random_forest",
+      "roc_auc_mean": 0.7743865190376702,
+      "roc_auc_std": 0.0026189114968609086
+    }
+  ],
+  "baseline": {
+    "model": "LogisticRegression",
+    "roc_auc": 0.7895841047621568,
+    "average_precision": 0.7677906776771409
+  },
+  "holdout": {
+    "roc_auc": 0.7997329958311823,
+    "average_precision": 0.7807739678500727,
+    "base_rate": 0.4997,
+    "threshold": 0.5,
+    "accuracy": 0.7346,
+    "sensitivity": 0.6925,
+    "specificity": 0.7766,
+    "precision": 0.7559,
+    "roc_auc_by_slice": {
+      "gender=1": 0.7961,
+      "gender=2": 0.8061,
+      "cholesterol=1": 0.7909,
+      "cholesterol=2": 0.7728,
+      "cholesterol=3": 0.6614
+    }
+  },
+  "business": {
+    "headline": "At the default threshold the model flags 69% of true cardiovascular cases (sensitivity) while clearing 78% of healthy patients (specificity).",
+    "sensitivity": 0.6925,
+    "specificity": 0.7766
+  },
+  "top_features": [
+    {
+      "feature": "ap_hi",
+      "importance": 0.17379
+    },
+    {
+      "feature": "age",
+      "importance": 0.03646
+    },
+    {
+      "feature": "cholesterol",
+      "importance": 0.02584
+    },
+    {
+      "feature": "weight",
+      "importance": 0.00717
+    },
+    {
+      "feature": "ap_lo",
+      "importance": 0.00554
+    },
+    {
+      "feature": "active",
+      "importance": 0.00225
+    },
+    {
+      "feature": "gluc",
+      "importance": 0.00187
+    },
+    {
+      "feature": "smoke",
+      "importance": 0.00059
+    }
+  ]
+}

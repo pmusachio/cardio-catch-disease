@@ -1,15 +1,22 @@
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+
+# Environments
 .venv/
 venv/
 env/
 .env
+
+# Data: raw is downloaded on demand; processed/interim are regenerable build artifacts.
 data/raw/
-data/interim/
 data/processed/
+data/interim/
+
+# OS / editor
 .DS_Store
 .ipynb_checkpoints/

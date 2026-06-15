@@ -106,7 +106,7 @@ false alarms, which the app lets a clinician explore directly.
    ```
    streamlit run app/streamlit_app.py
    ```
-7. **Live app** — [huggingface.co/spaces/pmusachio/cardio-catch-disease](https://huggingface.co/spaces/pmusachio/cardio-catch-disease) — assess a patient and explore the threshold trade-off.
+7. **Live app** — [cardio-catch-disease.onrender.com](https://cardio-catch-disease.onrender.com) — assess a patient and explore the threshold trade-off.
 
 ## Next Steps
 
